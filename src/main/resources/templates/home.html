@@ -1,24 +1,20 @@
-<html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="fragments/layout_pages">
 
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+
 <title th:text="#{label.pages.home.title}">home</title>
-</head>
-<body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#" th:text="#{label.pages.home.title}">home</a>
-    </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a th:href="@{/logout}" th:text="#{label.pages.logout}">logout</a></li>
-      </ul>
-  </div>
-</nav>
-    <div class="container">
-            <h1 th:text="#{label.pages.home.message}">home</h1>
-    </div>
-</body>
+<th:block layout:fragment="custom_css" th:remove="tag">
 
-</html>
+</th:block>
 
+
+<th:block layout:fragment="content" th:remove="tag">
+
+	<h1 th:text="#{label.pages.home.message}">home</h1>
+</th:block>
+
+
+<div layout:fragment="custom_script" th:remove="tag">
+</div>
