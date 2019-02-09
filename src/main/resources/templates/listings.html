@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="fragments/layout_pages">
+
+
+<title th:text="#{label.pages.home.title}">home</title>
+<th:block layout:fragment="custom_css" th:remove="tag">
+
+</th:block>
+
+<div layout:fragment="custom_script" th:remove="tag"></div>
+
+<th:block layout:fragment="content" th:remove="tag">
+
+
+	<div sec:authorize="hasAuthority('WRITE_PRIVILEGE')"
+		th:text="#{label.pages.user.message}">user</div>
+
+	<div sec:authorize="hasAuthority('WRITE_PRIVILEGE')"
+		th:text="#{label.pages.admin.message}"></div>
+
+	<p th:if="${param.user} != null" th:text="${param.user[0]}">user</p>
+
+	<a class="btn btn-default" th:href="@{/admin.html}"
+		th:text="#{label.pages.admin}">admin</a>
+	<br />
+	<br />
+	<a th:href="@{/loggedUsers}" th:text="#{label.pages.users.message}">View
+		logged in users</a>
+	<br />
+	<a th:href="@{/loggedUsersFromSessionRegistry}"
+		th:text="#{label.pages.users.sessionregistry.message}">View logged
+		in users</a>
+
+
+</th:block>

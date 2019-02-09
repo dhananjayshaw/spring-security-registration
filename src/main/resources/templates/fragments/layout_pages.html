@@ -287,8 +287,8 @@
 								</li>
 							</ul></li>
 						<!-- Control Sidebar Toggle Button -->
-						<li><a href="#" data-toggle="control-sidebar"><i
-								class="fa fa-gears"></i></a></li>
+					<!-- 	<li><a href="#" data-toggle="control-sidebar"><i
+								class="fa fa-gears"></i></a></li> -->
 					</ul>
 				</div>
 
@@ -334,12 +334,13 @@
 						</span>
 					</a>
 						<ul class="treeview-menu">
-							<li><a href="index.html"><i class="fa fa-circle-o"></i>
-									Dashboard v1</a></li>
-							<li class="active"><a href="index2.html"><i
-									class="fa fa-circle-o"></i> Dashboard v2</a></li>
+							<li><a href="homepage.html"><i class="fa fa-circle-o"></i>
+									Home Page </a></li>	
+							<li><a href="/loggedUsers" sec:authorize="hasAuthority('WRITE_PRIVILEGE')" ><i class="fa fa-circle-o"></i>
+									Logged In Users</a></li>	
+															
 						</ul></li>
-					<li class="treeview"><a href="#"> <i class="fa fa-files-o"></i>
+				<!-- 	<li class="treeview"><a href="#"> <i class="fa fa-files-o"></i>
 							<span>Layout Options</span> <span class="pull-right-container">
 								<span class="label label-primary pull-right">4</span>
 						</span>
@@ -353,13 +354,13 @@
 									class="fa fa-circle-o"></i> Fixed</a></li>
 							<li><a href="pages/layout/collapsed-sidebar.html"><i
 									class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-						</ul></li>
-					<li><a href="pages/widgets.html"> <i class="fa fa-th"></i>
-							<span>Widgets</span> <span class="pull-right-container"> <small
+						</ul></li> -->
+					<li><a href="/listings"> <i class="fa fa-th"></i>
+							<span>My Listings</span> <span class="pull-right-container"> <small
 								class="label pull-right bg-green">new</small>
 						</span>
 					</a></li>
-					<li class="treeview"><a href="#"> <i
+					<!-- <li class="treeview"><a href="#"> <i
 							class="fa fa-pie-chart"></i> <span>Charts</span> <span
 							class="pull-right-container"> <i
 								class="fa fa-angle-left pull-right"></i>
@@ -493,7 +494,7 @@
 					<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
 					<li><a href="#"><i class="fa fa-circle-o text-yellow"></i>
 							<span>Warning</span></a></li>
-					<li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+					<li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li> -->
 				</ul>
 			</section>
 			<!-- /.sidebar -->
