@@ -1,22 +1,44 @@
-<html>
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
-    <title th:text="#{label.badUser.title}">bad user</title>
-</head>
-<body>
-<div class="container">
-<h1 class="alert alert-danger" th:text="${param.message[0]}">error</h1>
-<br/>
-<a class="btn btn-default" th:href="@{/registration.html}" th:text="#{label.form.loginSignUp}">signup</a>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="fragments/layout_pages_login">
 
-<div th:if="${param.expired[0]}">
-<br/>
-<h1 th:text="#{label.form.resendRegistrationToken}">resend</h1>
-<button onclick="resendToken()">resend</button>
+<th:block layout:fragment="custom_style" th:remove="tag">
+
+</th:block>
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script th:inline="javascript">
+<title th:text="#{label.badUser.title}">bad user</title>
+
+
+<th:block layout:fragment="content" th:remove="tag">
+
+	<div class="login-box">
+		<div class="login-logo">
+			<a href="/" th:href="@{/}"><b>TennisCrawler</b>.com</a>
+		</div>
+		<!-- /.login-logo -->
+		<div class="login-box-body">
+			<h1 class="alert alert-danger" th:text="${param.message[0]}">error</h1>
+			<br /> <a class="btn btn-default" th:href="@{/registration.html}"
+				th:text="#{label.form.loginSignUp}">signup</a>
+
+			<div th:if="${param.expired[0]}">
+				<br />
+				<h1 th:text="#{label.form.resendRegistrationToken}">resend</h1>
+				<button onclick="resendToken()">resend</button>
+
+
+			</div>
+
+		</div>
+	</div>
+
+</th:block>
+
+
+<div layout:fragment="custom_script" th:remove="tag">
+	<script th:inline="javascript">
 var serverContext = [[@{/}]];
 
 function resendToken(){
@@ -39,8 +61,4 @@ $(document).ajaxStart(function() {
     $("title").html("LOADING ...");
 });
 </script>
-
 </div>
-</div>
-</body>
-</html>

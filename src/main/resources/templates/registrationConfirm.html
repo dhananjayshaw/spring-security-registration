@@ -1,18 +1,28 @@
-<html>
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII"/>
-<title th:text="#{label.pages.home.title}">home</title>
-</head>
-<body>
-<div>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="fragments/layout_pages_login">
 
-<h1 class="alert alert-info" th:text="#{message.regSucc}">success</h1>
-<br/>
-<span th:if="${param.token != null}" th:text="#{token.message}">token</span>
-<span th:text="${param.token}">token</span>
-<br/>
-<a class="btn btn-primary" th:href="@{/login}" th:text="#{label.login}">login</a>
-</div>          
-</body>
-</html>
+<th:block layout:fragment="custom_css" th:remove="tag">
+
+</th:block>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title th:text="#{label.pages.home.title}">home</title>
+
+<th:block layout:fragment="content" th:remove="tag">
+
+	<div class="login-box">
+		<div class="login-logo">
+			<a href="/" th:href="@{/}"><b>TennisCrawler</b>.com</a>
+		</div>
+		<!-- /.login-logo -->
+		<div class="login-box-body">
+			<h1 class="alert alert-info" th:text="#{message.regSucc}">success</h1>
+			<br /> <span th:if="${param.token != null}"
+				th:text="#{token.message}">token</span> <span
+				th:text="${param.token}">token</span> <br /> <a
+				class="btn btn-primary" th:href="@{/login}" th:text="#{label.login}">login</a>
+		</div>
+	</div>
+
+</th:block>

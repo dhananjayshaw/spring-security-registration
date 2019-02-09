@@ -1,13 +1,24 @@
-<html>
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
-<title th:text="#{label.pages.home.title}">home</title>
-</head>
-<body>
-    <div class="container">
-	    <h1 class="alert alert-danger" th:text="#{message.sessionExpired}">expired</h1>
-	    <a class="btn btn-primary" th:href="@{/login}" th:text="#{label.form.loginLink}">login</a>
-    </div>
-</body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="fragments/layout_pages_login">
 
-</html>
+<th:block layout:fragment="custom_css" th:remove="tag">
+
+</th:block>
+<title th:text="#{label.pages.home.title}">home</title>
+<th:block layout:fragment="content" th:remove="tag">
+
+	<div class="login-box">
+		<div class="login-logo">
+			<a href="/" th:href="@{/}"><b>TennisCrawler</b>.com</a>
+		</div>
+		<!-- /.login-logo -->
+		<div class="login-box-body">
+			<h1 class="alert alert-danger" th:text="#{message.sessionExpired}">expired</h1>
+			<a class="btn btn-primary" th:href="@{/login}"
+				th:text="#{label.form.loginLink}">login</a>
+		</div>
+	</div>
+
+</th:block>

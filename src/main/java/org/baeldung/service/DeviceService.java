@@ -54,7 +54,7 @@ public class DeviceService {
     public void verifyDevice(User user, HttpServletRequest request) throws IOException, GeoIp2Exception {
 
         String ip = extractIp(request);
-        String location = getIpLocation(ip);
+        String location = ip.equalsIgnoreCase("0:0:0:0:0:0:0:1") ? "localhost" : getIpLocation(ip);
 
         String deviceDetails = getDeviceDetails(request.getHeader("user-agent"));
 

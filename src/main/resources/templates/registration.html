@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="fragments/layout_pages_login">
+
+<th:block layout:fragment="custom_style" th:remove="tag">
+	
+</th:block>
+
+
 <style>
 .password-verdict{
 color:#000;

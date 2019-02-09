@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      >
+<body>
+<th:block th:fragment="header_breadcrum">
+
+
+  <section class="content-header">
+        <h1 th:text="${PageName}">          
+          
+        </h1>
+          <small th:text="${PageSmallTxt}" ></small>         
+        
+        <ol class="breadcrumb" >
+        <th:block th:each="item, itemStat : ${breadcrumbs}">
+          <li th:unless="${itemStat.last}" > <a href="#" th:href="@{${item.link}}" th:utext="${item.linktext}">Middle breadcrumb</a></li>
+          <li class="active" th:if="${itemStat.last}" th:utext="${item.linktext}" >Last  Navigation</li>
+          </th:block>
+        </ol>
+      </section>
+
+</th:block>
+</body>
+</html>
